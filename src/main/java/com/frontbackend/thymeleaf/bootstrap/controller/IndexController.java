@@ -13,4 +13,22 @@ public class IndexController {
     public String main(Model model) {
         return "index";
     }
+
+    @GetMapping("/HTML")
+    public String htmlPage(Model model) {
+        // Pass any specific data to HTML page
+        return "HTML";
+    }
+
+    @GetMapping("/Crash")
+    public String crashPage(Model model) {
+        // Pass any specific data to Crash page
+        return "Crash";
+    }
+
+    @GetMapping("/Overview")
+    public String overviewPage(Model model) {
+        // Pass any specific data to Overview page
+        return "Overview";
+    }
 }

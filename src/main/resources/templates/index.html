@@ -1,96 +1,46 @@
-<!--used gpt4-->
 <!DOCTYPE HTML>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8"/>
-    <title>Spring Boot Thymeleaf Application - Bootstrap Modal</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- metadata and bootstrap links -->
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
 </head>
 <body>
-
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-    <div class="container">
-        <a class="navbar-brand" href="/">Thymeleaf - Bootstrap Modal</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                aria-controls="navbarResponsive"
-                aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
+<!-- Navbar -->
+<!-- Container -->
 <div class="container mt-5">
     <div class="row justify-content-center text-center">
-        <div class="col-md-8">
-            <h1 class="display-4">자바 백엔드 개발자</h1>
-            <p class="lead">Step by step guide to becoming a modern java backend developer in 2023</p>
-        </div>
+        <!-- Heading and lead -->
     </div>
     <div class="row justify-content-center text-center mt-4">
-        <div class="col-md-4">
-            <a href="#" class="btn btn-lg btn-success">Download PDF</a>
-        </div>
+        <!-- Download button -->
     </div>
     <div class="row justify-content-center text-center mt-4">
         <div class="col-md-3">
             <h3>Language</h3>
             <!-- Html modal trigger -->
-            <section class="bg-light">
-<!--                <div class="col-md-30 text-center">-->
-            <button class="btn btn-primary btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-                Dynamic modal </button>
-                <th:block th:replace="_modals :: modal('exampleModal1')">modal</th:block>
-            </section>
-<!--                </div>-->
-            <section class="bg-light">
-            <button type="button" class="btn btn-primary btn-lg btn-block mb-3" data-toggle="modal" data-target="#exampleModal2">
-                Test Modal
-            </button>
-                <th:block th:replace="_modals_test :: modal('exampleModal2')">modal</th:block>
-            </section>
-            <section class="bg-light">
-            <button type="button" class="btn btn-primary btn-lg btn-block mb-3" data-toggle="modal" data-target="#HtmlModal">
+            <button type="button" class="btn btn-primary btn-lg btn-block mb-3" data-toggle="modal" data-target="#html-modal">
                 HTML
             </button>
-            <th:block th:replace="HTML :: modal('HtmlModal')">modal</th:block>
-            </section>
+            <th:block th:replace="HTML :: modal('html-modal')">modal</th:block>
+        </div>
+        <div class="col-md-3">
+            <h3>Computer Science</h3>
+            <!-- CS Crash Course modal trigger -->
+            <button class="btn btn-info btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#crash-modal">
+                CS Crash Course
+            </button>
+            <th:block th:replace="Crash :: modal('crash-modal')">modal</th:block>
+        </div>
+        <div class="col-md-3">
+            <h3>Additional Resources</h3>
+            <!-- Overview of Programming modal trigger -->
+            <button class="btn btn-success btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#overview-modal">
+                Overview of Programming
+            </button>
+            <th:block th:replace="Overview :: modal('overview-modal')">modal</th:block>
         </div>
     </div>
 </div>
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
-<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
-<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
-
-<script>
-    $('#exampleModal1').on('show.bs.modal', function () {
-        $.get("/modals/modal1", function (data) {
-            $('#exampleModal1').find('.modal-body').html(data);
-        })
-    });
-</script>
-
+<!-- JavaScript links -->
 </body>
 </html>
