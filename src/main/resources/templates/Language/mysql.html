@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Backend Developer Roadmap</title>
+   <link rel="stylesheet" type="text/css" href="styles.css">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="Our first page">
+   <meta name="keywords" content="html tutorial template">
+</head>
+<body>
+<!-- Modal -->
+<div th:fragment="modal(id)" class="modal fade" th:id="${id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+         </div>
+         <div class="modal-body">
+            <h4>
+               Why you should learn MySQL?
+            </h4>
+            <p>
+               MySQL is the most popular database for developers and is known for its high performance,
+               reliability, and ease of use. SQL is important for optimizing
+               performance and is essential for managing a website's server-side programs and databases.
+            </p>
+            <h4>
+               Free Course
+            </h4>
+            <p>
+               If you're looking for free MySQL courses to get started with, you might want to check out Bro Code's
+               MySQL courses. They offer a variety of courses
+               that cover different aspects of MySQL such as installation, configuration, and querying.
+            </p>
+            <a href="https://www.youtube.com/watch?v=5OdVJbNCSso" target="_blank">Bro Code's MySQL Course</a>
+            <p></p>
+            <h4>
+               Paid Course
+            </h4>
+            <p>
+               According to Colt Steele, “This course is a gentle but comprehensive introduction to MySQL,
+               one of the most highly in-demand skills in the business sector today.”
+               The course covers everything from the basics of SQL to advanced topics such as database design
+               . The course now uses MySQL 8.x
+               and covers new topics including: Window Functions, Views, and SQL modes1
+            </p>
+            <a href="https://www.udemy.com/course/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/mysql.html" target="_blank">Colt Steele's MySQL Course</a>
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+         </div>
+      </div>
+   </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
