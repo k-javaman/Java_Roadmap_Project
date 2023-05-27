@@ -1,0 +1,84 @@
+<!--used gpt4-->
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Spring Boot Thymeleaf Application - Bootstrap Modal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+        <a class="navbar-brand" href="/">Thymeleaf - Bootstrap Modal</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/guide}">Guide</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/contact}">Contact me</a>
+                </li>
+                <!--                <li class="nav-test">-->
+                <!--                    <a class="nav-link" th:href="@{/world}">Test</a>-->
+                <!--                </li>-->
+            </ul>
+        </div>
+    </div>
+</nav>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="my-4 text-center">Why This Website Exists</h1>
+        </div>
+        <div class="col-md-8 offset-md-2">
+            <p class="lead">
+                When I started my journey to become a Java backend developer six months ago, I found a plethora of roadmaps for frontend technologies such as JavaScript and TypeScript, but the resources for aspiring Java developers were sparse. This made the initiation process somewhat confusing and challenging for many beginners, including me.
+            </p>
+            <p class="lead">
+                Even though I've been learning Java for just half a year and am still navigating my way through, I decided to create this website. It is a reflection of the roadmap I'm following in my learning process. It might not be exhaustive, but my hope is that it can be a helpful starting point for others on a similar journey.
+            </p>
+            <p class="lead">
+                Please bear in mind that I'm still learning. If you find any errors or have suggestions to improve this roadmap, feel free to contact me!
+            </p>
+        </div>
+    </div>
+
+    <div class="row my-5">
+        <div class="col-md-12">
+            <h1 class="my-4 text-center">How To Use This Roadmap</h1>
+        </div>
+        <div class="col-md-8 offset-md-2">
+            <p class="lead">
+                Firstly, I recommend starting with the "Overview of Programming" section. This segment provides valuable insights into a programmer's role and the mindset that can contribute to your success.
+            </p>
+            <p class="lead">
+                Next, dive into the HTML course. As you progress, you'll likely face challenges; there might be times when things don't go as planned, and you may feel despondent. However, concurrently, you'll also experience the thrill of building a webpage, which can be very rewarding.
+            </p>
+            <p class="lead">
+                While taking the HTML course, I also suggest you go through the "CS Crash Course". It is beginner-friendly and elucidates various important concepts which will be beneficial throughout your career as a developer.
+            </p>
+            <p class="lead">
+                Moving on, you should take the JAVA,CS50,Object Oriented Programming together, and then simultaneously study MySQL, NAND2TETRIS, DSA, and Clean Code and so on. Remember, this roadmap is flexible. If you find certain topics in the "Computer Science" or "Additional Resources" section challenging, or if your primary goal is to quickly learn Java & Spring to get a job, you can revisit these complex topics later when you're comfortable or when the need arises.
+                But you should focus on Language part even if it's hard.
+            </p>
+            <p class="lead">
+                This roadmap is designed to be a living resource, evolving with your learning journey. So, let's start this exciting adventure of becoming a Java backend developer!
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
