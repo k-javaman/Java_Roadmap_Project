@@ -6,51 +6,51 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class LanguageController {
-    @GetMapping("/Language/html")
+    @GetMapping("/must-have/html")
     public String htmlPage(Model model) {
         // Pass any specific data to HTML page
-        return "/Language/html";
+        return "/must-have/html";
     }
 
-    @GetMapping("/Language/java")
+    @GetMapping("/must-have/java")
     public String javaPage(Model model) {
         // Pass any specific data to HTML page
-        return "/Language/java";
+        return "/must-have/java";
     }
 
-    @GetMapping("/Language/mysql")
+    @GetMapping("/must-have/mysql")
     public String mysqlPage(Model model) {
         // Pass any specific data to HTML page
-        return "/Language/mysql";
+        return "/must-have/mysql";
     }
 
-    @GetMapping("/Language/spring")
+    @GetMapping("/must-have/spring")
     public String springPage(Model model) {
         // Pass any specific data to HTML page
-        return "/Language/spring";
+        return "/must-have/spring";
     }
 
-    @GetMapping("/Language/jpa")
+    @GetMapping("/must-have/jpa")
     public String jpaPage(Model model) {
         // Pass any specific data to HTML page
-        return "/Language/jpa";
+        return "/must-have/jpa";
     }
 
-    @GetMapping("/Language/spring-security")
+    @GetMapping("/must-have/spring-security")
     public String securityPage(Model model) {
         // Pass any specific data to HTML page
-        return "/Language/spring-security";
+        return "/must-have/spring-security";
     }
 
-    @GetMapping("/Language/spring-unit-testing")
+    @GetMapping("/must-have/spring-unit-testing")
     public String testPage(Model model) {
         // Pass any specific data to HTML page
-        return "/Language/spring-unit-testing";
+        return "/must-have/spring-unit-testing";
     }
 
-    @GetMapping("/Language/spring-microservice")
+    @GetMapping("/must-have/spring-microservice")
     public String springMicroservicePage(Model model) {
         // Pass any specific data to HTML page
-        return "/Language/spring-microservice";
+        return "/must-have/spring-microservice";
     }
 }

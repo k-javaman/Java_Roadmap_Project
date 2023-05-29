@@ -12,11 +12,6 @@ public class NavController {
         return "guide";
     }
 
-    @GetMapping("/contact")
-    public String contact(Model model) {
-        return "contact";
-    }
-
     // Example
 //    @GetMapping("/world")
 //    public String main(Model model) {
