@@ -11,7 +11,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
-        <a class="navbar-brand" href="/">Java Roadmap</a>
+        <a class="navbar-brand" href="/" th:text="#{nav.title}"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -20,8 +20,9 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/guide}">Guide</a>
+                    <a class="nav-link" th:href="@{/guide}" th:text="#{nav.guide}"></a>
                 </li>
+                <!-- th:replace="${#locale.language + '/guide'}" -->
                 <!--                <li class="nav-test">-->
                 <!--                    <a class="nav-link" th:href="@{/world}">Test</a>-->
                 <!--                </li>-->
@@ -32,269 +33,269 @@
 <div class="container mt-5">
     <div class="row justify-content-center text-center">
         <div class="col-md-8">
-            <h1 class="display-4">Java Backend Developer</h1>
-            <p class="lead">Step by step guide to become a modern java backend developer in 2023</p>
+            <h1 class="display-4" th:text="#{title.name}">Java Backend Developer</h1>
+            <p class="lead" th:text="#{sub-title.name}"></p>
         </div>
     </div>
     <div class="row justify-content-center text-center mt-4">
         <div class="col-md-4">
             <form method="GET" action="/api/download">
-                <button class="btn btn-lg btn-success" type="submit">Download pdf</button>
+                <button class="btn btn-lg btn-success" type="submit" th:text="#{download}"></button>
             </form>
         </div>
     </div>
     <div class="row justify-content-center text-center mt-4">
         <div class="col-md-3">
-            <h3>MUST-HAVE</h3>
+            <h3 th:text="#{subject.must-have}"></h3>
             <!-- HTML & CSS modal trigger -->
             <section class="bg-light">
                 <div class="col-md-30 text-center">
-                    <button class="btn btn-primary btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#html-modal">
-                        HTML & CSS </button>
-                    <th:block th:replace="must-have/html :: modal('html-modal')">modal</th:block>
+                    <button class="btn btn-primary btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#html-modal" th:text="#{button.must-have.html}">
+                         </button>
+                    <th:block th:replace="${#locale.language + '/must-have/html'} :: modal('html-modal')">modal</th:block>
                 </div>
             </section>
             <!-- Java modal trigger -->
             <section class="bg-light">
                 <div class="col-md-30 text-center">
-                    <button class="btn btn-primary btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#java-modal">
-                        Java </button>
+                    <button class="btn btn-primary btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#java-modal" th:text="#{button.must-have.java}">
+                         </button>
                     <th:block th:replace="must-have/java :: modal('java-modal')">modal</th:block>
                 </div>
             </section>
             <!-- Mysql modal trigger -->
             <section class="bg-light">
                 <div class="col-md-30 text-center">
-                    <button class="btn btn-primary btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#mysql-modal">
-                        MySQL </button>
+                    <button class="btn btn-primary btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#mysql-modal" th:text="#{button.must-have.mysql}">
+                         </button>
                     <th:block th:replace="must-have/mysql :: modal('mysql-modal')">modal</th:block>
                 </div>
             </section>
             <!-- Spring modal trigger -->
             <section class="bg-light">
                 <div class="col-md-30 text-center">
-                    <button class="btn btn-primary btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#spring-modal">
-                        Spring Framework </button>
+                    <button class="btn btn-primary btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#spring-modal" th:text="#{button.must-have.spring}">
+                         </button>
                     <th:block th:replace="must-have/spring :: modal('spring-modal')">modal</th:block>
                 </div>
             </section>
             <!-- JPA modal trigger -->
             <section class="bg-light">
                 <div class="col-md-30 text-center">
-                    <button class="btn btn-primary btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#jpa-modal">
-                        JPA </button>
+                    <button class="btn btn-primary btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#jpa-modal" th:text="#{button.must-have.jpa}">
+                         </button>
                     <th:block th:replace="must-have/jpa :: modal('jpa-modal')">modal</th:block>
                 </div>
             </section>
             <!-- Spring Security modal trigger -->
             <section class="bg-light">
                 <div class="col-md-30 text-center">
-                    <button class="btn btn-primary btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#security-modal">
-                        Spring Security  </button>
+                    <button class="btn btn-primary btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#security-modal" th:text="#{button.must-have.spring.security}">
+                          </button>
                     <th:block th:replace="must-have/spring-security :: modal('security-modal')">modal</th:block>
                 </div>
             </section>
             <!-- Spring Boot Unit Testing modal trigger -->
             <section class="bg-light">
                 <div class="col-md-30 text-center">
-                    <button class="btn btn-primary btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#test-modal">
-                        Spring Unit Testing </button>
+                    <button class="btn btn-primary btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#test-modal" th:text="#{button.must-have.spring.test}">
+                         </button>
                     <th:block th:replace="must-have/spring-unit-testing :: modal('test-modal')">modal</th:block>
                 </div>
             </section>
             <!-- Spring Microservice modal trigger -->
             <section class="bg-light">
                 <div class="col-md-30 text-center">
-                    <button class="btn btn-primary btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#spring-microservice-modal">
-                        Spring Microservice </button>
+                    <button class="btn btn-primary btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#spring-microservice-modal" th:text="#{button.must-have.spring.microservice}">
+                         </button>
                     <th:block th:replace="must-have/spring-microservice :: modal('spring-microservice-modal')">modal</th:block>
                 </div>
             </section>
         </div>
         <div class="col-md-3">
-            <h3>Important</h3>
+            <h3 th:text="#{subject.important}"></h3>
             <!-- Overview of Programming modal trigger -->
             <section class="bg-light">
                 <div class="col-md-30 text-center">
-                    <button class="btn btn-warning btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#overview-modal">
-                        Overview of Programming </button>
+                    <button class="btn btn-warning btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#overview-modal" th:text="#{button.important.overview}">
+                         </button>
                 </div>
-                <th:block th:replace="Important/overview :: modal('overview-modal')">modal</th:block>
+                <th:block th:replace="important/overview :: modal('overview-modal')">modal</th:block>
             </section>
             <!-- Git modal trigger -->
             <section class="bg-light">
                 <div class="col-md-30 text-center">
-                    <button class="btn btn-warning btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#git-modal">
-                        Git </button>
+                    <button class="btn btn-warning btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#git-modal" th:text="#{button.important.git}">
+                         </button>
                 </div>
-                <th:block th:replace="Important/git :: modal('git-modal')">modal</th:block>
+                <th:block th:replace="important/git :: modal('git-modal')">modal</th:block>
             </section>
             <!-- AWS modal trigger -->
             <section class="bg-light">
                 <div class="col-md-30 text-center">
-                    <button class="btn btn-warning btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#aws-modal">
-                        AWS </button>
+                    <button class="btn btn-warning btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#aws-modal" th:text="#{button.important.aws}">
+                         </button>
                 </div>
-                <th:block th:replace="Important/aws :: modal('aws-modal')">modal</th:block>
+                <th:block th:replace="important/aws :: modal('aws-modal')">modal</th:block>
             </section>
             <!-- Linux modal trigger -->
             <section class="bg-light">
                 <div class="col-md-30 text-center">
-                    <button class="btn btn-warning btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#linux-modal">
-                        Linux </button>
+                    <button class="btn btn-warning btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#linux-modal" th:text="#{button.important.linux}">
+                         </button>
                 </div>
-                <th:block th:replace="Important/linux :: modal('linux-modal')">modal</th:block>
+                <th:block th:replace="important/linux :: modal('linux-modal')">modal</th:block>
             </section>
             <!-- Docker modal trigger -->
             <section class="bg-light">
                 <div class="col-md-30 text-center">
-                    <button class="btn btn-warning btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#docker-modal">
+                    <button class="btn btn-warning btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#docker-modal" th:text="#{button.important.docker}">
                         Docker </button>
                 </div>
-                <th:block th:replace="Important/docker :: modal('docker-modal')">modal</th:block>
+                <th:block th:replace="important/docker :: modal('docker-modal')">modal</th:block>
             </section>
             <!-- Kubernetes modal trigger -->
             <section class="bg-light">
                 <div class="col-md-30 text-center">
-                    <button class="btn btn-warning btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#kubernetes-modal">
-                        Kubernetes </button>
+                    <button class="btn btn-warning btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#kubernetes-modal" th:text="#{button.important.kubernetes}">
+                         </button>
                 </div>
-                <th:block th:replace="Important/kubernetes :: modal('kubernetes-modal')">modal</th:block>
+                <th:block th:replace="important/kubernetes :: modal('kubernetes-modal')">modal</th:block>
             </section>
 
         </div>
         <div class="col-md-3">
-            <h3>Computer Science</h3>
+            <h3 th:text="#{subject.cs}"></h3>
             <!-- CS Crash Course modal trigger -->
             <section class="bg-light">
                 <div class="col-md-30 text-center">
-                    <button class="btn btn-info btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#crash-modal">
-                        CS Crash Course </button>
+                    <button class="btn btn-info btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#crash-modal" th:text="#{button.cs.crash}">
+                         </button>
                 </div>
-                <th:block th:replace="CS/crash :: modal('crash-modal')">modal</th:block>
+                <th:block th:replace="cs/crash :: modal('crash-modal')">modal</th:block>
             </section>
             <!-- CS50 -->
             <section class="bg-light">
                 <div class="col-md-30 text-center">
-                    <button class="btn btn-info btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#cs50-modal">
-                        CS50 </button>
+                    <button class="btn btn-info btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#cs50-modal" th:text="#{button.cs.cs50}">
+                         </button>
                 </div>
-                <th:block th:replace="CS/cs50 :: modal('cs50-modal')">modal</th:block>
+                <th:block th:replace="cs/cs50 :: modal('cs50-modal')">modal</th:block>
             </section>
             <!-- DSA -->
             <section class="bg-light">
                 <div class="col-md-30 text-center">
-                    <button class="btn btn-info btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#dsa-modal">
-                        DSA </button>
+                    <button class="btn btn-info btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#dsa-modal" th:text="#{button.cs.dsa}">
+                         </button>
                 </div>
-                <th:block th:replace="CS/dsa :: modal('dsa-modal')">modal</th:block>
+                <th:block th:replace="cs/dsa :: modal('dsa-modal')">modal</th:block>
             </section>
             <!--NAND2TETRIS-->
             <section class="bg-light">
                 <div class="col-md-30 text-center">
-                    <button class="btn btn-info btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#nand-modal">
-                        NAND2TETRIS </button>
+                    <button class="btn btn-info btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#nand-modal" th:text="#{button.cs.nand}">
+                         </button>
                 </div>
-                <th:block th:replace="CS/nand :: modal('nand-modal')">modal</th:block>
+                <th:block th:replace="cs/nand :: modal('nand-modal')">modal</th:block>
             </section>
             <!--Computer Architecture-->
             <section class="bg-light">
                 <div class="col-md-30 text-center">
-                    <button class="btn btn-info btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#ca-modal">
-                        Computer Architecture </button>
+                    <button class="btn btn-info btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#ca-modal" th:text="#{button.cs.ca}">
+                        </button>
                 </div>
-                <th:block th:replace="CS/ca :: modal('ca-modal')">modal</th:block>
+                <th:block th:replace="cs/ca :: modal('ca-modal')">modal</th:block>
             </section>
             <!--Operating System-->
             <section class="bg-light">
                 <div class="col-md-30 text-center">
-                    <button class="btn btn-info btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#os-modal">
-                       Operating System </button>
+                    <button class="btn btn-info btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#os-modal" th:text="#{button.cs.os}">
+                       </button>
                 </div>
-                <th:block th:replace="CS/os :: modal('os-modal')">modal</th:block>
+                <th:block th:replace="cs/os :: modal('os-modal')">modal</th:block>
             </section>
             <!--Database-->
             <section class="bg-light">
                 <div class="col-md-30 text-center">
-                    <button class="btn btn-info btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#db-modal">
-                       Database </button>
+                    <button class="btn btn-info btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#db-modal" th:text="#{button.cs.db}">
+                        </button>
                 </div>
-                <th:block th:replace="CS/db :: modal('db-modal')">modal</th:block>
+                <th:block th:replace="cs/db :: modal('db-modal')">modal</th:block>
             </section>
             <!--Network-->
             <section class="bg-light">
                 <div class="col-md-30 text-center">
-                    <button class="btn btn-info btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#net-modal">
-                         Network </button>
+                    <button class="btn btn-info btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#net-modal" th:text="#{button.cs.net}">
+                          </button>
                 </div>
-                <th:block th:replace="CS/net :: modal('net-modal')">modal</th:block>
+                <th:block th:replace="cs/net :: modal('net-modal')">modal</th:block>
             </section>
             <!-- interview -->
             <section class="bg-light">
                 <div class="col-md-30 text-center">
-                    <button class="btn btn-info btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#interview-modal">
-                        Prepare for CS interview </button>
+                    <button class="btn btn-info btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#interview-modal" th:text="#{button.cs.interview}">
+                         </button>
                 </div>
-                <th:block th:replace="CS/interview :: modal('interview-modal')">modal</th:block>
+                <th:block th:replace="cs/interview :: modal('interview-modal')">modal</th:block>
             </section>
         </div>
         <div class="col-md-3">
-            <h3>For Coding Better</h3>
+            <h3 th:text="#{subject.better}"></h3>
             <!-- Object Oriented Programming modal trigger -->
             <section class="bg-light">
                 <div class="col-md-30 text-center">
-                    <button class="btn btn-success btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#oop-modal">
-                        Object Oriented Programming </button>
+                    <button class="btn btn-success btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#oop-modal" th:text="#{button.better.oop}">
+                         </button>
                 </div>
-                <th:block th:replace="Additional/oop :: modal('oop-modal')">modal</th:block>
+                <th:block th:replace="addtional/oop :: modal('oop-modal')">modal</th:block>
             </section>
             <!-- Clean Code modal trigger -->
             <section class="bg-light">
                 <div class="col-md-30 text-center">
-                    <button class="btn btn-success btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#clean-code-modal">
-                        Clean Code </button>
+                    <button class="btn btn-success btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#clean-code-modal" th:text="#{button.better.clean-code}">
+                         </button>
                 </div>
-                <th:block th:replace="Additional/clean-code :: modal('clean-code-modal')">modal</th:block>
+                <th:block th:replace="addtional/clean-code :: modal('clean-code-modal')">modal</th:block>
             </section>
             <!-- Design Pattern modal trigger -->
             <section class="bg-light">
                 <div class="col-md-30 text-center">
-                    <button class="btn btn-success btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#design-pattern-modal">
-                        Design Pattern </button>
+                    <button class="btn btn-success btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#design-pattern-modal" th:text="#{button.better.design-pattern}">
+                         </button>
                 </div>
-                <th:block th:replace="Additional/design-pattern :: modal('design-pattern-modal')">modal</th:block>
+                <th:block th:replace="addtional/design-pattern :: modal('design-pattern-modal')">modal</th:block>
             </section>
             <!-- Refactoring modal trigger -->
             <section class="bg-light">
                 <div class="col-md-30 text-center">
-                    <button class="btn btn-success btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#refactoring-modal">
-                        Refactoring </button>
+                    <button class="btn btn-success btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#refactoring-modal" th:text="#{button.better.refactoring}">
+                         </button>
                 </div>
-                <th:block th:replace="Additional/refactoring :: modal('refactoring-modal')">modal</th:block>
+                <th:block th:replace="addtional/refactoring :: modal('refactoring-modal')">modal</th:block>
             </section>
             <!-- System Design modal trigger -->
             <section class="bg-light">
                 <div class="col-md-30 text-center">
-                    <button class="btn btn-success btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#system-design-modal">
-                        System design </button>
+                    <button class="btn btn-success btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#system-design-modal" th:text="#{button.better.system-design}">
+                         </button>
                 </div>
-                <th:block th:replace="Additional/system-design :: modal('system-design-modal')">modal</th:block>
+                <th:block th:replace="addtional/system-design :: modal('system-design-modal')">modal</th:block>
             </section>
             <!-- TDD modal trigger -->
             <section class="bg-light">
                 <div class="col-md-30 text-center">
-                    <button class="btn btn-success btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#unit-testing-modal">
-                        Test Driven Development </button>
+                    <button class="btn btn-success btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#unit-testing-modal" th:text="#{button.better.tdd}">
+                         </button>
                 </div>
-                <th:block th:replace="Additional/unit-testing :: modal('unit-testing-modal')">modal</th:block>
+                <th:block th:replace="addtional/unit-testing :: modal('unit-testing-modal')">modal</th:block>
             </section>
             <!-- Microservice modal trigger -->
             <section class="bg-light">
                 <div class="col-md-30 text-center">
-                    <button class="btn btn-success btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#microservice-modal">
-                        Microservice </button>
+                    <button class="btn btn-success btn-lg btn-block mb-3" data-bs-toggle="modal" data-bs-target="#microservice-modal" th:text="#{button.better.microservice}">
+                         </button>
                 </div>
-                <th:block th:replace="Additional/microservice :: modal('microservice-modal')">modal</th:block>
+                <th:block th:replace="addtional/microservice :: modal('microservice-modal')">modal</th:block>
             </section>
 
         </div>

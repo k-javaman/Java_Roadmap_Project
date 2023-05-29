@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Backend Developer Roadmap</title>
+   <link rel="stylesheet" type="text/css" href="styles.css">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="Our first page">
+   <meta name="keywords" content="html tutorial template">
+</head>
+<body>
+<!-- Modal -->
+<div th:fragment="modal(id)" class="modal fade" th:id="${id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Object Oriented Programming</h5>
+            <div class="form-check form-switch text-end">
+               <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+               <label class="form-check-label" for="flexSwitchCheckDefault" th:text="#{modal.status}"></label>
+            </div>
+         </div>
+         <div class="modal-body">
+            <h4>
+               Why you should learn OOP(Object Oriented Programming)?
+            </h4>
+            <p>
+               Software developers should learn object-oriented programming (OOP) because it provides a structured approach to design and development. OOP promotes code reusability, modularity, and scalability, making it easier to manage and maintain complex software systems. It aligns with industry best practices and enhances collaboration among developers.
+            </p>
+            <h4>
+               Book
+            </h4>
+            <p>
+               "The Object-Oriented Thought Process" is a valuable book for OOP beginners as it presents concepts in a clear and logical manner. It covers key OOP principles, including encapsulation, inheritance, and polymorphism, and provides real-world examples to enhance understanding. With its practical approach and step-by-step explanations, it helps beginners grasp OOP concepts and develop effective coding practices.
+            </p>
+            <a href="https://www.youtube.com/watch?v=N2bXEUSAiTI" target="_blank">George Hotz | Programming | what is programming? (noob lessons!) |</a>
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+         </div>
+      </div>
+   </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

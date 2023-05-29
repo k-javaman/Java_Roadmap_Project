@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Backend Developer Roadmap</title>
+   <link rel="stylesheet" type="text/css" href="styles.css">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="Our first page">
+   <meta name="keywords" content="html tutorial template">
+</head>
+<body>
+<!-- Modal -->
+<div th:fragment="modal(id)" class="modal fade" th:id="${id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Git</h5>
+            <div class="form-check form-switch text-end">
+               <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+               <label class="form-check-label" for="flexSwitchCheckDefault" th:text="#{modal.status}"></label>
+            </div>
+         </div>
+         <div class="modal-body">
+            <h4>
+               Why you should learn Git?
+            </h4>
+            <p>
+               Learning Git equips software developers with essential version control skills, enables effective collaboration, improves code management and organization, facilitates error recovery, enhances industry employability, and integrates with modern development practices. It is a fundamental tool that empowers software developers to work more efficiently, collaborate seamlessly, and deliver high-quality software projects.
+            </p>
+            <h4>
+               Free Course
+            </h4>
+            <p>
+               If you're looking for a free course to get started with Git,
+               I highly recommend Paolo Perrotta's "How Git Works" in Pluralsight. In this concise and comprehensive course, you will unravel the mysteries of Git and develop a solid understanding of its underlying model. Whether you've been using Git for some time or just getting started, this course is designed to bring clarity to your Git workflows. Through real-world examples and practical explanations, you will navigate the complexities of Git with ease. From exploring the contents of the .git directory to mastering essential operations like branching and merging, this course will empower you to confidently control your versioning. Get ready to level up your Git skills and enhance collaboration. Enroll now and embark on a streamlined Git experience!
+            </p>
+            <p>
+               <a href="https://app.pluralsight.com/course-player?clipId=0e31d18b-7060-47e3-b053-e1f7e947973c" target="_blank">"How Git Works"</a>
+            </p>
+            <h4>
+               Paid Course
+            </h4>
+            <p>
+               “The Git & Github Bootcamp” by Colt Steele is a course on Udemy that teaches you how to master the essentials and the tricky bits of Git and Github. You will learn how to understand how Git works behind the scenes, explain the difference Git objects: trees, blobs, commits, and annotated tags, master the essential Git workflow: adding & committing, and work with Git branches
+            </p>
+            <p>
+               <a href="https://www.udemy.com/course/git-and-github-bootcamp/" target="_blank">Colt Steele's The Git & Github Bootcamp </a>
+            </p>
+            <h4>
+               Book
+            </h4>
+            <p>
+               "Pro Git" is a comprehensive guide for mastering Git, written by Scott Chacon and Ben Straub. Appropriate for all skill levels, it navigates from Git basics to advanced topics, revealing Git's internals. The book offers practical examples and accessible writing, making it ideal for both novices and experienced developers. It also explores varied workflows for team collaboration. Available online for free, it's a highly recommended resource for anyone looking to understand Git deeply.            </p>
+            <p>
+               <a href="https://git-scm.com/book/en/v2" target="_blank">Pro Git Book</a>
+            </p>
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+         </div>
+      </div>
+   </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

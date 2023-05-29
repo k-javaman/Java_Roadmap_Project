@@ -10,15 +10,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.Locale;
 
 @Controller
-@RequestMapping("/cs")
-public class CsController {
+@RequestMapping("/better")
+public class BetterController {
+
     @GetMapping("/{page}")
     public String getPage(Model model, @PathVariable String page) {
         // Get the language code
         String languageCode = getCountryCode();
 
         // Construct the view path based on the language code and page
-        String viewPath = "/" + languageCode + "/cs/" + page;
+        String viewPath = "/" + languageCode + "/better/" + page;
 
         // Pass any specific data to HTML page
         return viewPath;

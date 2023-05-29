@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Backend Developer Roadmap</title>
+   <link rel="stylesheet" type="text/css" href="styles.css">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="Our first page">
+   <meta name="keywords" content="html tutorial template">
+</head>
+<body>
+<!-- Modal -->
+<div th:fragment="modal(id)" class="modal fade" th:id="${id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Kubernetes</h5>
+            <div class="form-check form-switch text-end">
+               <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+               <label class="form-check-label" for="flexSwitchCheckDefault" th:text="#{modal.status}"></label>
+            </div>
+         </div>
+         <div class="modal-body">
+            <h4>
+               Why you should learn Kubernetes?
+            </h4>
+            <p>
+               Learning Kubernetes is crucial for software developers as it provides scalability, resilience, and efficient management of containerized applications. It simplifies container orchestration, optimizes resource utilization, and ensures portability across different environments. With Kubernetes, developers can collaborate effectively with operations teams, leverage industry-standard practices, and stay ahead in the rapidly evolving landscape of application deployment. It opens doors to diverse projects and opportunities, enabling developers to build robust and scalable applications with ease.
+            <h4>
+               Free Website tutorial
+            </h4>
+            <p>
+               "Techworld with nana's Kubernetes course" provides a comprehensive overview of Kubernetes, covering essential topics such as its components, architecture, local setup, YAML configuration, namespaces, ingress, helm, volumes, stateful sets, and services. With practical demonstrations and clear explanations, the course offers valuable insights for beginners and individuals seeking to enhance their understanding of Kubernetes. However, individual preferences and learning experiences may vary, so it's advisable to consider reviews and ratings before enrolling in the course.            <p>
+               <a href="https://www.youtube.com/watch?v=X48VuDVv0do/" target="_blank">"Kubernetes Tutorial for Beginners"</a>
+            </p>
+            <h4>
+               Paid Course
+            </h4>
+            <p>
+               KodeKloud's Kubernetes course offers a comprehensive curriculum covering administration, design, building, testing, troubleshooting, securing, and configuring storage and network in Kubernetes clusters. With practical exercises and real-world examples, the course equips learners with essential skills for effectively managing production-ready Kubernetes environments. Suitable for individuals seeking to enhance their Kubernetes expertise, the course provides valuable insights into cluster management and optimization.
+            </p>
+            <p>
+               <a href="https://www.udemy.com/course/certified-kubernetes-administrator-with-practice-tests/" target="_blank">Certified Kubernetes Administrator (CKA) with Practice Tests </a>
+            </p>
+            <h4>
+               Book
+            </h4>
+            <p>
+               "Kubernetes in Action, Second Edition" is a comprehensive guide that introduces readers to Kubernetes and its role in deploying and managing cloud-native applications. It covers container technologies, deployment techniques, and the Kubernetes architecture, including the Kubernetes API. The book provides practical insights and tips for efficiently working with Kubernetes clusters in production environments. Topics such as monitoring, tuning, and scaling are also extensively covered. With a focus on hands-on learning, the book is a valuable resource for developers and administrators seeking to leverage Kubernetes for application deployment.
+            </p>
+            <p>
+               <a href="https://www.amazon.com/Kubernetes-Action-Second-Marko-Luk-C5-A1a-dp-1617297615/dp/1617297615/ref=dp_ob_title_bk" target="_blank">Kubernetes in Action</a>
+            </p>
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+         </div>
+      </div>
+   </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
