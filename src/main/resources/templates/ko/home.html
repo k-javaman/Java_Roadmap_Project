@@ -24,9 +24,13 @@
                 </li>
             </ul>
         </div>
-        <div class="dropdown-menu dropdown-menu-right">
-            <a class="dropdown-item" th:href="@{/changeLanguage(lang='en')}" th:text="#{language.en}"></a>
-            <a class="dropdown-item" th:href="@{/changeLanguage(lang='ko')}" th:text="#{language.ko}"></a>
+        <div class="btn-group">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:text="#{language}">
+            </button>
+            <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" th:href="@{/changeLanguage(lang='en', redirect=${#httpServletRequest.getRequestURI()})}" th:text="#{language.en}"></a>
+                <a class="dropdown-item" th:href="@{/changeLanguage(lang='ko', redirect=${#httpServletRequest.getRequestURI()})}" th:text="#{language.ko}"></a>
+            </div>
         </div>
     </div>
 </nav>
