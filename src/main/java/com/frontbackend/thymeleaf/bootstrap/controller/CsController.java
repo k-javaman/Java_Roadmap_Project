@@ -17,18 +17,38 @@ public class CsController {
         // Pass any specific data to HTML page
         return "CS/cs50";
     }
-
-    @GetMapping("/CS/nand-dsa")
-    public String nandDsaPage(Model model) {
+    @GetMapping("/CS/das")
+    public String dsaPage(Model model) {
         // Pass any specific data to HTML page
-        return "CS/nand-dsa";
+        return "CS/dsa";
+    }
+    @GetMapping("/CS/nand")
+    public String nandPage(Model model) {
+        // Pass any specific data to HTML page
+        return "CS/nand";
+    }
+    @GetMapping("/CS/ca")
+    public String caPage(Model model) {
+        // Pass any specific data to HTML page
+        return "CS/ca";
+    }
+    @GetMapping("/CS/os")
+    public String osPage(Model model) {
+        // Pass any specific data to HTML page
+        return "CS/os";
+    }
+    @GetMapping("/CS/db")
+    public String dbPage(Model model) {
+        // Pass any specific data to HTML page
+        return "CS/db";
+    }
+    @GetMapping("/CS/net")
+    public String netPage(Model model) {
+        // Pass any specific data to HTML page
+        return "CS/net";
     }
 
-    @GetMapping("/CS/cs-os-db-net")
-    public String CaOsDbNetPage(Model model) {
-        // Pass any specific data to HTML page
-        return "CS/ca-os-db-net";
-    }
+
 
     @GetMapping("/CS/interview")
     public String interview(Model model) {
