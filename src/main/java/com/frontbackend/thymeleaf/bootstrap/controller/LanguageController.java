@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class LanguageController {
-    @GetMapping("/Language/HTML")
+    @GetMapping("/Language/html")
     public String htmlPage(Model model) {
         // Pass any specific data to HTML page
-        return "/Language/HTML";
+        return "/Language/html";
     }
 
     @GetMapping("/Language/java")

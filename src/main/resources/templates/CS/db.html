@@ -15,7 +15,11 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Database</h5>
+        <div class="form-check form-switch text-end">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+          <label class="form-check-label" for="flexSwitchCheckDefault" th:replace="fragments/status :: header"></label>
+        </div>
       </div>
       <div class="modal-body">
         <h4>
@@ -28,6 +32,13 @@
           CMU's Intro to Database Systems course is highly regarded for its comprehensive coverage of fundamental database concepts and practical implementation techniques. It provides valuable skills for software developers, including database design, query optimization, and transaction management. The course emphasizes real-world applications and offers hands-on experience with industry-standard database systems, enabling developers to build efficient and reliable applications that interact with databases.
         </p>
         <a href="https://www.youtube.com/playlist?list=PLSE8ODhjZXjaKScG3l0nuOiDTTqpfnWFf" target="_blank">CMU Intro to Database Systems</a>
+        <h4>
+          Book
+        </h4>
+        <p>
+          "Database System Concepts" by Silberschatz, Korth, and Sudarshan is a renowned textbook in database education. Now in its 6th edition, it covers the fundamental concepts of database management in an intuitive manner. Suitable for undergraduate and graduate courses, the book requires familiarity with basic data structures, computer organization, and a high-level programming language. It presents concepts through descriptions, figures, and examples, omitting formal proofs while providing a solid foundation in database systems.
+        </p>
+        <a href="https://www.amazon.com/Database-System-Concepts-Abraham-Silberschatz-ebook/dp/B07PPHYQGV/ref=sr_1_2?crid=ENJVYZ2QEK4F&keywords=Database+System+Concepts&qid=1685336377&s=books&sprefix=database+system+concepts+%2Cstripbooks-intl-ship%2C264&sr=1-2" target="_blank">Database System Concepts </a>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
