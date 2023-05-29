@@ -15,6 +15,13 @@ import java.util.Locale;
 @Controller
 public class NavController {
 
+    private final PageLocalizationService pageLocalizationService;
+
+    @Autowired
+    public NavController(PageLocalizationService pageLocalizationService) {
+        this.pageLocalizationService = pageLocalizationService;
+    }
+
     @GetMapping("/changeLanguage")
     public String changeLanguage(@RequestParam String lang) {
         // You do not need to do anything here, as the LocaleChangeInterceptor will take care of the language change
@@ -24,7 +31,7 @@ public class NavController {
     // We should have this otherwise, the button is disappeared..?
     @GetMapping("/home")
     public String homePage() {
-        String languageCode = getCountryCode();
+        String languageCode = pageLocalizationService.getCountryCode();
         String viewPath = "home"; // Assuming "home" is the name of your home page Thymeleaf template
         return viewPath;
     }
@@ -32,21 +39,7 @@ public class NavController {
 
     @GetMapping("/{page}")
     public String guidePage(Model model, @PathVariable String page) {
-        String languageCode = getCountryCode();
-        String viewPath = "/" + languageCode + "/" + page;
+        String viewPath = pageLocalizationService.getViewPath(page);
         return viewPath;
-    }
-
-    private String getCountryCode() {
-        // Get the current Locale
-        Locale currentLocale = LocaleContextHolder.getLocale();
-        // Get the language code from the current Locale
-        String languageCode = currentLocale.getLanguage();
-
-        // Fallback to "en" if the current locale isn't "ko" (Korean)
-        if (!"ko".equals(languageCode)) {
-            languageCode = "en";
-        }
-        return languageCode;
     }
 }

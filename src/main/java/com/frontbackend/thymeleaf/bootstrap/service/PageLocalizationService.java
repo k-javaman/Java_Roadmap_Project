@@ -8,7 +8,6 @@ import java.util.Locale;
 @Service
 public class PageLocalizationService {
 
-
     public String getCountryCode() {
         // Get the current Locale
         Locale currentLocale = LocaleContextHolder.getLocale();
