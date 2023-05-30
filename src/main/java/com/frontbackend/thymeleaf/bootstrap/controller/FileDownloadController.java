@@ -2,7 +2,6 @@ package com.frontbackend.thymeleaf.bootstrap.controller;
 
 import com.frontbackend.thymeleaf.bootstrap.service.PageLocalizationService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.HttpHeaders;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
-import java.util.Locale;
 
 @RestController
 @RequestMapping("/api")
