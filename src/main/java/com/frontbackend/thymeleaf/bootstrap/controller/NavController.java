@@ -34,7 +34,7 @@ public class NavController {
         }
     }
 
-    // We should have this otherwise, the button is disappeared..?
+    // We should have this. otherwise, the button is disappeared..?
     @GetMapping("/home")
     public String homePage() {
         String languageCode = pageLocalizationService.getCountryCode();

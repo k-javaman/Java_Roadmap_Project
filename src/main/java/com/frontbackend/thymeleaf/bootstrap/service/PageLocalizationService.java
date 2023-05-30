@@ -25,6 +25,11 @@ public class PageLocalizationService {
         // Get the language code
         String languageCode = getCountryCode();
 
+        // Don't prepend language code for error pages
+        if (subdir.equals("error")) {
+            return "/" + subdir + "/" + page;
+        }
+
         // Construct the view path based on the language code and page
         String viewPath = "/" + languageCode + "/" + subdir + "/" + page;
 
@@ -34,6 +39,11 @@ public class PageLocalizationService {
     public String getViewPath(String page) {
         // Get the language code
         String languageCode = getCountryCode();
+
+        // Don't prepend language code for error pages
+        if (page.startsWith("error/")) {
+            return "/" + page;
+        }
 
         // Construct the view path based on the language code and page
         String viewPath = "/" + languageCode + "/" + page;
