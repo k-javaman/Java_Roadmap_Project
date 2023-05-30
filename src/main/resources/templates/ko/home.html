@@ -5,6 +5,7 @@
     <meta charset="UTF-8"/>
     <title>자바 로드맵</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link th:href="@{/en/css/styles.css}" rel="stylesheet" />
 </head>
 <body>
@@ -304,6 +305,21 @@
             </section>
         </div>
     </div>
+    <!-- Social share buttons -->
+    <div class="share-btn-container">
+        <a th:href="@{'https://www.facebook.com/sharer/sharer.php?u=' + ${url}}" target="_blank" class="share-btn">
+            <i class="fab fa-facebook"></i>
+        </a>
+        <a th:href="@{'https://twitter.com/intent/tweet?url=' + ${url}}" target="_blank" class="share-btn">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a th:href="@{'https://www.reddit.com/r/subreddit/submit?selftext=true&title=PostTitle&text=' + ${url}}" target="_blank" class="share-btn">
+            <i class="fab fa-reddit"></i>
+        </a>
+        <a th:href="@{'https://www.linkedin.com/sharing/share-offsite/?url=' + ${url}}" target="_blank" class="share-btn">
+            <i class="fab fa-linkedin"></i>
+        </a>
+    </div>
 </div>
 </div>
 <hr>
@@ -318,9 +334,9 @@
                 <div class="col-md-4">
                     <h4>Follow me</h4>
                     <ul class="social-icon">
-                        <li><a href="https://twitter.com/KJavaman"><img src="https://i.pinimg.com/564x/62/6e/cc/626ecc149649ec8ddb5853e12d87625c.jpg" ></img></a></li>
-                        <li><a href="https://www.linkedin.com/in/yeachan-shin-276074261/"><img src="https://i.pinimg.com/564x/b0/28/c2/b028c2e59043116dfc0da6ec6fd26d70.jpg" ></img></a></li>
-                        <li><a href="https://github.com/k-javaman"><img src="https://i.pinimg.com/564x/3a/64/71/3a64716dc68d3a2fd08381f697e77e7d.jpg" ></img></a></li>
+                        <li><a href="https://twitter.com/KJavaman" target="_blank"><img src="https://i.pinimg.com/564x/62/6e/cc/626ecc149649ec8ddb5853e12d87625c.jpg" ></img></a></li>
+                        <li><a href="https://www.linkedin.com/in/yeachan-shin-276074261/" target="_blank"><img src="https://i.pinimg.com/564x/b0/28/c2/b028c2e59043116dfc0da6ec6fd26d70.jpg" ></img></a></li>
+                        <li><a href="https://github.com/k-javaman" target="_blank"><img src="https://i.pinimg.com/564x/3a/64/71/3a64716dc68d3a2fd08381f697e77e7d.jpg" ></img></a></li>
                     </ul>
                 </div>
             </div>
@@ -328,11 +344,11 @@
     </div>
     <div class="footer-bottom">
         <div class="text-center">
-            <a href="https://www.buymeacoffee.com/kjavaman12"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=kjavaman12&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" /></a>
+            <a href="https://www.buymeacoffee.com/kjavaman12" target="_blank"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=kjavaman12&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" /></a>
         </div>
     </div>
 </footer>
-<script src="script.js"></script>
+<script type="text/javascript" th:src="@{/script.js}"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
 <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
