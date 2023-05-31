@@ -1,4 +1,4 @@
-package com.frontbackend.thymeleaf.bootstrap.config;
+package com.me.kjavaman.roadmap.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package com.frontbackend.thymeleaf.bootstrap.service;
+package com.me.kjavaman.roadmap.service;
 
 import org.springframework.stereotype.Service;
 import org.springframework.context.i18n.LocaleContextHolder;

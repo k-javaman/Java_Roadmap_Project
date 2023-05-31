@@ -1,4 +1,4 @@
-package com.frontbackend.thymeleaf.bootstrap.controller;
+package com.me.kjavaman.roadmap.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

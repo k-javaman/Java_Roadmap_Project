@@ -1,6 +1,6 @@
-package com.frontbackend.thymeleaf.bootstrap.controller;
+package com.me.kjavaman.roadmap.controller;
 
-import com.frontbackend.thymeleaf.bootstrap.service.PageLocalizationService;
+import com.me.kjavaman.roadmap.service.PageLocalizationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.InputStreamResource;
