@@ -11,6 +11,7 @@ import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
 import java.util.Locale;
 
+
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
 
@@ -40,4 +41,5 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addResourceHandler("/js/**", "/en/js/**")
                 .addResourceLocations("classpath:/static/js/", "classpath:/static/en/js/");
     }
+
 }
