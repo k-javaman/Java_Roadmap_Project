@@ -1,7 +1,10 @@
 package com.me.kjavaman.roadmap.controller;
 
+import com.me.kjavaman.roadmap.exception.ResourceNotFoundException;
 import com.me.kjavaman.roadmap.service.PageLocalizationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -42,7 +45,12 @@ public class NavController {
 
     @GetMapping("/{page}")
     public String guidePage(Model model, @PathVariable String page) {
-//        String viewPath = "/" + page;
-        return "/guide";
+        // Check if the page exists
+        Resource resource = new ClassPathResource("/templates/" + page + ".html");
+        if (!resource.exists()) {
+            // Throw an exception if the page doesn't exist
+            throw new ResourceNotFoundException("Page not found");
+        }
+        return "/" + page;
     }
 }
