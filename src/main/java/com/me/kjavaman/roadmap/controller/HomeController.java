@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HomeController {
     @GetMapping("/")
     public String home(Model model) {
-        String url = "https://java-roadmap.netlify.app/";
+        String url = "http://java-roadmap-master-env.eba-wpejsbsa.ap-northeast-2.elasticbeanstalk.com/";
         model.addAttribute("url", url);
         return "home";
     }
