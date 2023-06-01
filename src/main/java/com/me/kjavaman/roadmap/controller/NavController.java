@@ -42,7 +42,7 @@ public class NavController {
 
     @GetMapping("/{page}")
     public String guidePage(Model model, @PathVariable String page) {
-        String viewPath = pageLocalizationService.getViewPath(page);
-        return viewPath;
+//        String viewPath = "/" + page;
+        return "/guide";
     }
 }

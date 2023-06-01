@@ -7,9 +7,10 @@
     <artifactId>java_roadmap_master</artifactId>
 
     <properties>
+        <start-class>com.me.kjavaman.roadmap.Application</start-class>
         <bootstrap.version>4.0.0-2</bootstrap.version>
         <webjars-locator.version>0.30</webjars-locator.version>
-        <lombok.version>1.18.2</lombok.version>
+        <lombok.version>1.18.26</lombok.version>
         <commonmark.version>0.13.1</commonmark.version>
     </properties>
 
@@ -46,12 +47,14 @@
             <version>${webjars-locator.version}</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>${lombok.version}</version>
+            <version>1.18.26</version>
             <scope>provided</scope>
         </dependency>
+
 
         <!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
         <dependency>
@@ -72,5 +75,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

@@ -1,0 +1,124 @@
+<!--used gpt4-->
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Spring Boot Thymeleaf Application - Bootstrap Modal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link th:href="@{/en/css/styles.css}" rel="stylesheet" />
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+        <a class="navbar-brand" href="/" th:text="#{nav.title}"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/guide}" th:text="#{nav.guide}"></a>
+                </li>
+            </ul>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:text="#{language}">
+            </button>
+            <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" th:href="@{/changeLanguage(lang='en', redirect=${#httpServletRequest.getRequestURI()})}" th:text="#{language.en}"></a>
+                <a class="dropdown-item" th:href="@{/changeLanguage(lang='ko', redirect=${#httpServletRequest.getRequestURI()})}" th:text="#{language.ko}"></a>
+            </div>
+        </div>
+    </div>
+</nav>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="my-4 text-center" th:text="#{guide.why.title}"></h1>
+        </div>
+        <div class="col-md-8 offset-md-2">
+            <p class="lead" th:text="#{guide.why.text.first}">
+
+            </p>
+            <p class="lead" th:text="#{guide.why.text.second}">
+
+            </p>
+            <p class="lead" th:text="#{guide.why.text.third}">
+
+            </p>
+        </div>
+    </div>
+
+    <div class="row my-5">
+        <div class="col-md-12">
+            <h1 class="my-4 text-center" th:text="#{guide.usage.title}"></h1>
+        </div>
+        <div class="col-md-8 offset-md-2">
+            <p class="lead" th:text="#{guide.usage.text.first}">
+
+            </p>
+            <p class="lead" th:text="#{guide.usage.text.second}">
+
+            </p>
+            <p class="lead" th:text="#{guide.usage.text.third}">
+
+            </p>
+            <p class="lead" th:text="#{guide.usage.text.fourth}">
+
+            </p>
+        </div>
+    </div>
+    <!-- Social share buttons -->
+    <div class="share-btn-container">
+        <a th:href="@{'https://www.facebook.com/sharer/sharer.php?u=' + ${url}}" target="_blank" class="share-btn">
+            <i class="fab fa-facebook"></i>
+        </a>
+        <a th:href="@{'https://twitter.com/intent/tweet?url=' + ${url}}" target="_blank" class="share-btn">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a th:href="@{'https://www.reddit.com/r/subreddit/submit?selftext=true&title=PostTitle&text=' + ${url}}" target="_blank" class="share-btn">
+            <i class="fab fa-reddit"></i>
+        </a>
+        <a th:href="@{'https://www.linkedin.com/sharing/share-offsite/?url=' + ${url}}" target="_blank" class="share-btn">
+            <i class="fab fa-linkedin"></i>
+        </a>
+    </div>
+</div>
+</body>
+<hr>
+<footer>
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h4>About me</h4>
+                    <p th:text="#{introduction}"> </p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Follow me</h4>
+                    <ul class="social-icon">
+                        <li><a href="https://twitter.com/KJavaman" target="_blank"><img src="https://i.pinimg.com/564x/62/6e/cc/626ecc149649ec8ddb5853e12d87625c.jpg" ></img></a></li>
+                        <li><a href="https://www.linkedin.com/in/yeachan-shin-276074261/" target="_blank"><img src="https://i.pinimg.com/564x/b0/28/c2/b028c2e59043116dfc0da6ec6fd26d70.jpg" ></img></a></li>
+                        <li><a href="https://github.com/k-javaman" target="_blank"><img src="https://i.pinimg.com/564x/3a/64/71/3a64716dc68d3a2fd08381f697e77e7d.jpg" ></img></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="text-center">
+            <a href="https://www.buymeacoffee.com/kjavaman12" target="_blank"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=kjavaman12&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" /></a>
+        </div>
+    </div>
+</footer>
+<script type="text/javascript" th:src="@{/script.js}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</html>
