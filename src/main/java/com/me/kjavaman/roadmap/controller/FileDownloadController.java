@@ -1,7 +1,6 @@
 package com.me.kjavaman.roadmap.controller;
 
-import com.me.kjavaman.roadmap.service.DownloadService;
-import com.me.kjavaman.roadmap.service.PageLocalizationService;
+import com.me.kjavaman.roadmap.service.HandleByLocaleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.ResponseEntity;
@@ -14,22 +13,21 @@ import java.io.IOException;
 @RestController
 @RequestMapping("/api")
 public class FileDownloadController {
-    private final PageLocalizationService pageLocalizationService;
-    private final DownloadService downloadService;
+    private final HandleByLocaleService handleByLocaleService;
 
     @Autowired
-    public FileDownloadController(PageLocalizationService pageLocalizationService, DownloadService downloadService) {
-        this.pageLocalizationService = pageLocalizationService;
-        this.downloadService = downloadService;
+    public FileDownloadController( HandleByLocaleService handleByLocaleService) {
+        this.handleByLocaleService = handleByLocaleService;
     }
 
     @GetMapping("/download")
     public ResponseEntity<InputStreamResource> downloadFile() throws IOException {
-        return getInputStreamResourceResponseEntity();
+        ResponseEntity<InputStreamResource> handlePDFDownloadByLanguage = handleByLocaleService.getInputStreamResourceResponseEntity();
+        return handlePDFDownloadByLanguage;
     }
 
     private ResponseEntity<InputStreamResource> getInputStreamResourceResponseEntity() throws IOException {
-        ResponseEntity<InputStreamResource> handlePDFDownloadByLanguage = downloadService.getInputStreamResourceResponseEntity();
+        ResponseEntity<InputStreamResource> handlePDFDownloadByLanguage = handleByLocaleService.getInputStreamResourceResponseEntity();
         return handlePDFDownloadByLanguage;
     }
 }

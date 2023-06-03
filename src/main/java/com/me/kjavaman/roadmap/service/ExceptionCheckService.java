@@ -6,7 +6,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ExceptionService {
+public class ExceptionCheckService {
     public String notfoundCheck(String page) {
         // Check if the page exists
         Resource resource = new ClassPathResource("/templates/" + page + ".html");

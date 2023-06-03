@@ -1,29 +1,19 @@
 package com.me.kjavaman.roadmap.service;
 
 import org.springframework.stereotype.Service;
-import org.springframework.context.i18n.LocaleContextHolder;
-
-import java.util.Locale;
 
 @Service
-public class PageLocalizationService {
+public class PageViewService {
 
-    public String getCountryCode() {
-        // Get the current Locale
-        Locale currentLocale = LocaleContextHolder.getLocale();
-        // Get the language code from the current Locale
-        String languageCode = currentLocale.getLanguage();
+    private final HandleByLocaleService handleByLocaleService;
 
-        // Fallback to "en" if the current locale isn't "ko" (Korean)
-        if (!"ko".equals(languageCode)) {
-            languageCode = "en";
-        }
-        return languageCode;
+    public PageViewService(HandleByLocaleService handleByLocaleService) {
+        this.handleByLocaleService = handleByLocaleService;
     }
 
     public String getViewPath(String subdir, String page) {
         // Get the language code
-        String languageCode = getCountryCode();
+        String languageCode = handleByLocaleService.getCountryCode();
 
         // Don't prepend language code for error pages
         if (subdir.equals("error")) {
@@ -34,6 +24,17 @@ public class PageLocalizationService {
         String viewPath = "/" + languageCode + "/" + subdir + "/" + page;
 
         return viewPath;
+    }
+
+    public String getRedirectPage(String redirect) {
+        // LocaleChangeInterceptor will take care of the language change
+        if (redirect != null) {
+            // If a redirect page was specified, go there
+            return "redirect:" + redirect;
+        } else {
+            // If no redirect page was specified, default to home
+            return "redirect:/home";
+        }
     }
 
 //    public String getViewPath(String page) {

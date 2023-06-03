@@ -32,9 +32,9 @@
     </div>
 </nav>
 <div class="content">
-    <h2><i class="fas fa-exclamation-triangle"></i> Oops! Something went wrong</h2>
-    <h2>Error 500 - Internal Server Error</h2>
-    <p>Our engineers are on it! Please try again later.</p>
+    <h2><i class="fas fa-exclamation-triangle" th:text="#{error.title}"></i></h2>
+    <h2 th:text="#{error.server-error.code}"></h2>
+    <p th:text="#{error.message}"></p>
     <a href="/" class="btn btn-primary"><i class="fas fa-home"></i> Go Home</a>
 </div>
 </body>
