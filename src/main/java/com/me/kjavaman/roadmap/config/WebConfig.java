@@ -1,7 +1,9 @@
 package com.me.kjavaman.roadmap.config;
 
+import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.ui.Model;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -32,6 +34,16 @@ public class WebConfig implements WebMvcConfigurer {
         return lci;
     }
 
+    // Configures a {@link MessageSource} bean for message localization using properties
+    // files with the base name "messages" and UTF-8 encoding.
+    @Bean
+    public MessageSource messageSource() {
+        ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
+        messageSource.setBasename("messages");
+        messageSource.setDefaultEncoding("UTF-8");
+        return messageSource;
+    }
+
     // This method registers the interceptor defined above in the application.
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
@@ -46,5 +58,4 @@ public class WebConfig implements WebMvcConfigurer {
 //        registry.addResourceHandler("/js/**", "/en/js/**")
 //                .addResourceLocations("classpath:/static/js/", "classpath:/static/en/js/");
     }
-
 }
