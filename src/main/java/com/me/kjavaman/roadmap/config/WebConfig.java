@@ -28,13 +28,34 @@ public class WebConfig implements WebMvcConfigurer {
         return messageSource;
     }
 
-    // This method defines the default Locale (language and country) for the application.
+    /**
+     * Configures the locale resolver for the application.
+     *
+     * The locale resolver is responsible for resolving the user's locale based on the request.
+     * In this implementation, the AcceptHeaderLocaleResolver is used, which resolves the locale based
+     * on the "Accept-Language" header in the request. If no locale is specified in the header,
+     * the default locale is set to "en_US".
+     *
+     * @return The configured locale resolver
+     */
     @Bean
     public LocaleResolver localeResolver() {
         AcceptHeaderLocaleResolver localeResolver = new AcceptHeaderLocaleResolver();
         localeResolver.setDefaultLocale(Locale.US); // Set your default locale
         return localeResolver;
     }
+
+//    @Bean
+//    public LocaleChangeInterceptor localeChangeInterceptor() {
+//        LocaleChangeInterceptor lci = new LocaleChangeInterceptor();
+//        lci.setParamName("lang");
+//        return lci;
+//    }
+//
+//    @Override
+//    public void addInterceptors(InterceptorRegistry registry) {
+//        registry.addInterceptor(localeChangeInterceptor());
+//    }
 
     // This method maps requests to specific paths to resources in the classpath.
     @Override
