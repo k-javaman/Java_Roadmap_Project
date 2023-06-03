@@ -1,11 +1,9 @@
 package com.me.kjavaman.roadmap.controller;
 
+import com.me.kjavaman.roadmap.service.DownloadService;
 import com.me.kjavaman.roadmap.service.PageLocalizationService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.InputStreamResource;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,24 +15,21 @@ import java.io.IOException;
 @RequestMapping("/api")
 public class FileDownloadController {
     private final PageLocalizationService pageLocalizationService;
+    private final DownloadService downloadService;
 
     @Autowired
-    public FileDownloadController(PageLocalizationService pageLocalizationService) {
+    public FileDownloadController(PageLocalizationService pageLocalizationService, DownloadService downloadService) {
         this.pageLocalizationService = pageLocalizationService;
+        this.downloadService = downloadService;
     }
 
     @GetMapping("/download")
     public ResponseEntity<InputStreamResource> downloadFile() throws IOException {
-        String languageCode = pageLocalizationService.getCountryCode();
-        String fileName = languageCode.equals("ko") ? "ko_roadmap.pdf" : "en_roadmap.pdf";
-        ClassPathResource pdfFile = new ClassPathResource("static/" + fileName);
-        HttpHeaders headers = new HttpHeaders();
-        headers.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + fileName);
+        return getInputStreamResourceResponseEntity();
+    }
 
-        return ResponseEntity
-                .ok()
-                .headers(headers)
-                .contentType(MediaType.APPLICATION_PDF)
-                .body(new InputStreamResource(pdfFile.getInputStream()));
+    private ResponseEntity<InputStreamResource> getInputStreamResourceResponseEntity() throws IOException {
+        ResponseEntity<InputStreamResource> handlePDFDownloadByLanguage = downloadService.getInputStreamResourceResponseEntity();
+        return handlePDFDownloadByLanguage;
     }
 }

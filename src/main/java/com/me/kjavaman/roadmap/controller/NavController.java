@@ -1,10 +1,9 @@
 package com.me.kjavaman.roadmap.controller;
 
-import com.me.kjavaman.roadmap.exception.ResourceNotFoundException;
+import com.me.kjavaman.roadmap.service.ExceptionService;
+import com.me.kjavaman.roadmap.service.NavbarService;
 import com.me.kjavaman.roadmap.service.PageLocalizationService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,23 +15,22 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class NavController {
 
     private final PageLocalizationService pageLocalizationService;
+    private final ExceptionService exceptionService;
+    private final NavbarService navbarService;
 
     @Autowired
-    public NavController(PageLocalizationService pageLocalizationService) {
+    public NavController(PageLocalizationService pageLocalizationService, ExceptionService exceptionService, NavbarService navbarService) {
         this.pageLocalizationService = pageLocalizationService;
+        this.exceptionService = exceptionService;
+        this.navbarService = navbarService;
     }
 
     @GetMapping("/changeLanguage")
     public String changeLanguage(@RequestParam String lang, @RequestParam(required=false) String redirect) {
-        // LocaleChangeInterceptor will take care of the language change
-        if (redirect != null) {
-            // If a redirect page was specified, go there
-            return "redirect:" + redirect;
-        } else {
-            // If no redirect page was specified, default to home
-            return "redirect:/home";
-        }
+        String getRedirectView = navbarService.getRedirectPage(redirect);
+        return getRedirectView;
     }
+
 
     // We should have this. otherwise, the button is disappeared..?
     @GetMapping("/home")
@@ -45,12 +43,7 @@ public class NavController {
 
     @GetMapping("/{page}")
     public String guidePage(Model model, @PathVariable String page) {
-        // Check if the page exists
-        Resource resource = new ClassPathResource("/templates/" + page + ".html");
-        if (!resource.exists()) {
-            // Throw an exception if the page doesn't exist
-            throw new ResourceNotFoundException("Page not found");
-        }
-        return "/" + page;
+        String guideView = exceptionService.notfoundCheck(page);
+        return guideView;
     }
 }

@@ -36,18 +36,18 @@ public class PageLocalizationService {
         return viewPath;
     }
 
-    public String getViewPath(String page) {
-        // Get the language code
-        String languageCode = getCountryCode();
-
-        // Don't prepend language code for error pages
-        if (page.startsWith("error/")) {
-            return "/" + page;
-        }
-
-        // Construct the view path based on the language code and page
-        String viewPath = "/" + languageCode + "/" + page;
-
-        return viewPath;
-    }
+//    public String getViewPath(String page) {
+//        // Get the language code
+//        String languageCode = getCountryCode();
+//
+//        // Don't prepend language code for error pages
+//        if (page.startsWith("error/")) {
+//            return "/" + page;
+//        }
+//
+//        // Construct the view path based on the language code and page
+//        String viewPath = "/" + languageCode + "/" + page;
+//
+//        return viewPath;
+//    }
 }

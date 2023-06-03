@@ -2,6 +2,7 @@ package com.me.kjavaman.roadmap.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.ui.Model;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -38,8 +39,7 @@ public class WebConfig implements WebMvcConfigurer {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/css/**", "/en/css/**")
                 .addResourceLocations("classpath:/static/css/", "classpath:/static/en/css/");
-        registry.addResourceHandler("/js/**", "/en/js/**")
-                .addResourceLocations("classpath:/static/js/", "classpath:/static/en/js/");
+//        registry.addResourceHandler("/js/**", "/en/js/**")
+//                .addResourceLocations("classpath:/static/js/", "classpath:/static/en/js/");
     }
-
 }
