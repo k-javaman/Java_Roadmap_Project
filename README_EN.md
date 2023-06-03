@@ -1,9 +1,8 @@
 # Java Developer Roadmap Website
 
-This project is a roadmap for Java developers which I compiled while teaching myself Java. It is meant to guide you on what to learn and in what order. The website was developed in two weeks, and there is still plenty of room for improvement.
+This project is a roadmap for Java developers which I compiled while teaching myself Java. It is meant to guide you on what to learn and in what order. The website was developed in two weeks, and there is still plenty of room for improvement. Therefore, if you notice anything that could be improved, your feedback is most welcome!
 
-> **Note:** The arrangement of resources and order of study were done by me, but the content was written by GPT-4. Therefore, if you notice anything that could be improved, your feedback is most welcome!
-
+> **Note:** The arrangement of resources and order of study were done by me, but the content was written by GPT-4. So i hope you would understand if ther is something unnatural in this website.
 ## Stack
 
 - Frontend: HTML, CSS, Bootstrap
