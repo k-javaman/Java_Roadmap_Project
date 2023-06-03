@@ -1,3 +1,5 @@
+## English Version
+ [English README](https://github.com/k-javaman/Java_Roadmap_Project/edit/main/README_EN.md)
 ## 만들게 된 이유
 
 자바 개발자가 되기 위해 독학하면서, 어떤 순서로 공부해야할지 몰랐습니다. okky 등 여러 사이트를 참고하여 어떻게 공부해야 될지 정리하였고, 이를 웹사이트로 제작하게 되었습니다. 웹사이트는 2주 동안 만들었으며, 아직도 개선할 점이 많습니다.
@@ -12,7 +14,7 @@
 
 ## 배운점 및 느낀점
 
-1. 부트스트랩 모달을 적용하고 어떻게 Spring Boot와 연동하는지에 대해 배웠습니다.
+1. 부트스트랩 모달을 적용하고 어떻게 Spring Boot와 연동하는지에 대해 배웠습니다. [링크](https://medium.com/@kjavaman12/how-to-apply-bootstrap-modal-in-thymeleaf-439a37ac1b9d)
 2. 부트스트랩을 통한 레이아웃에 대해 배웠습니다.
 3. 초기세팅의 중요성에 대해 깨달았습니다. 처음에 Bootstrap4로 시작하였지만, Bootstrap5로 업데이트하려고 하니 기존의 기능이 비활성화되는 문제가 발생했습니다.
 4. 이번 프로젝트에는 TDD를 적용하지 않았지만, chatgpt4로 생성한 코드들의 오류가 꼬리에 꼬리를 물고 생기는 것을 보고, 다음 프로젝트에는 TDD를 적용하겠다는 생각이 들었습니다.
