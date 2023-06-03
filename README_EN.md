@@ -14,7 +14,7 @@ This project is a roadmap for Java developers which I compiled while teaching my
 
 Through this project, I learned the following:
 
-1. How to use Bootstrap modals and integrate them with Spring Boot.
+1. How to use Bootstrap modals and integrate them with Spring Boot. [link](https://medium.com/@kjavaman12/how-to-apply-bootstrap-modal-in-thymeleaf-439a37ac1b9d)
 2. How to layout a site with Bootstrap.
 3. The importance of setting up a project correctly from the start. I started this project with Bootstrap4 and i wanted to update it to version 5. but some features became deactivated so it got confuseed
 4. The need for Test-Driven Development (TDD), as I noticed how easily errors can accumulate, especially when i try to implement the code from chatgpt4.
