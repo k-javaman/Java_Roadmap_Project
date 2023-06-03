@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+// This controller handles requests for specific pages.
 @Controller
 @RequestMapping
 public class PageViewController {
@@ -20,6 +21,7 @@ public class PageViewController {
         this.pageViewService = pageViewService;
     }
 
+    // This method returns a view based on a specified directory and page name.
     @GetMapping("/{subdir}/{page}")
     public String getPage(Model model, @PathVariable String subdir, @PathVariable String page) {
         String viewPath = pageViewService.getViewPath(subdir, page);
@@ -28,6 +30,7 @@ public class PageViewController {
         return viewPath;
     }
 
+    // This method changes the current language and redirects to a specified page or the home page if no redirect page is specified.
     @GetMapping("/changeLanguage")
     public String changeLanguage(@RequestParam String lang, @RequestParam(required=false) String redirect) {
         String getRedirectView = pageViewService.getRedirectPage(redirect);

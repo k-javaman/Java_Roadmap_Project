@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
 
+// This controller handles the request for downloading a file.
 @RestController
 @RequestMapping("/api")
 public class FileDownloadController {
@@ -20,13 +21,9 @@ public class FileDownloadController {
         this.handleByLocaleService = handleByLocaleService;
     }
 
+    //  This method returns a PDF file as a response.
     @GetMapping("/download")
     public ResponseEntity<InputStreamResource> downloadFile() throws IOException {
-        ResponseEntity<InputStreamResource> handlePDFDownloadByLanguage = handleByLocaleService.getInputStreamResourceResponseEntity();
-        return handlePDFDownloadByLanguage;
-    }
-
-    private ResponseEntity<InputStreamResource> getInputStreamResourceResponseEntity() throws IOException {
         ResponseEntity<InputStreamResource> handlePDFDownloadByLanguage = handleByLocaleService.getInputStreamResourceResponseEntity();
         return handlePDFDownloadByLanguage;
     }

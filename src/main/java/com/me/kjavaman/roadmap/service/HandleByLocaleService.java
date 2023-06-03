@@ -11,10 +11,11 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.util.Locale;
 
+// This service handles actions that are dependent on the locale.
 @Service
 public class HandleByLocaleService {
 
-
+    // This method returns a PDF file as a response based on the current locale.
     public ResponseEntity<InputStreamResource> getInputStreamResourceResponseEntity() throws IOException {
         String languageCode = getCountryCode();
         String fileName = languageCode.equals("ko") ? "ko_roadmap.pdf" : "en_roadmap.pdf";
@@ -29,6 +30,7 @@ public class HandleByLocaleService {
                 .body(new InputStreamResource(pdfFile.getInputStream()));
     }
 
+    // This method returns the current language code, defaulting to "en" (English) if the current language is not Korean.
     public String getCountryCode() {
         // Get the current Locale
         Locale currentLocale = LocaleContextHolder.getLocale();

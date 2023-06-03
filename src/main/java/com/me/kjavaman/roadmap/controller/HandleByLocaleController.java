@@ -18,6 +18,7 @@ public class HandleByLocaleController {
         this.handleByLocaleService = handleByLocaleService;
     }
 
+    // This method returns the view for the home page, depending on the current locale.
     // We should have this. otherwise, the button is disappeared..?
     @GetMapping("/home")
     public String homePage() {

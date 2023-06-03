@@ -1,7 +1,9 @@
 package com.me.kjavaman.roadmap.service;
 
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
+// This service determines the path for a specific view based on the locale and the page name.
 @Service
 public class PageViewService {
 
@@ -11,6 +13,7 @@ public class PageViewService {
         this.handleByLocaleService = handleByLocaleService;
     }
 
+    // This method returns the path to a specific view based on the directory and page name.
     public String getViewPath(String subdir, String page) {
         // Get the language code
         String languageCode = handleByLocaleService.getCountryCode();
@@ -26,6 +29,7 @@ public class PageViewService {
         return viewPath;
     }
 
+    // This method returns a redirect URL to a specified page or the home page if no redirect page is specified.
     public String getRedirectPage(String redirect) {
         // LocaleChangeInterceptor will take care of the language change
         if (redirect != null) {
@@ -35,6 +39,14 @@ public class PageViewService {
             // If no redirect page was specified, default to home
             return "redirect:/home";
         }
+    }
+
+    // Retrieves the URL and adds it to the given model.
+    // The URL represents the base URL of the Java Roadmap website.
+    public Model getUrl(Model model) {
+        String url = "http://java-roadmap-master-env.eba-wpejsbsa.ap-northeast-2.elasticbeanstalk.com/";
+        model.addAttribute("url", url);
+        return model;
     }
 
 //    public String getViewPath(String page) {
