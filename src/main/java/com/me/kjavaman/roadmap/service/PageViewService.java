@@ -41,12 +41,11 @@ public class PageViewService {
         }
     }
 
-    // Retrieves the URL and adds it to the given model.
-    // The URL represents the base URL of the Java Roadmap website.
-    public Model getUrl(Model model) {
-        String url = "http://java-roadmap-master-env.eba-wpejsbsa.ap-northeast-2.elasticbeanstalk.com/";
-        model.addAttribute("url", url);
-        return model;
+    // Retrieves the Home URL and adds it to the given model.
+    // The URL represents the Home URL of the Java Roadmap website.
+    public String getHomeUrl() {
+        String homeUrl = "http://java-roadmap-master-env.eba-wpejsbsa.ap-northeast-2.elasticbeanstalk.com/";
+        return homeUrl;
     }
 
 //    public String getViewPath(String page) {

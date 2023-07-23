@@ -1,5 +1,6 @@
 package com.me.kjavaman.roadmap.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,6 +19,7 @@ import java.util.Locale;
 // This class is responsible for the configuration related to Spring MVC.
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
+
     // Configures a {@link MessageSource} bean for message localization using properties
     // files with the base name "messages" and UTF-8 encoding.
     @Bean

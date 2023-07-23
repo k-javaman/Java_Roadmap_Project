@@ -4,10 +4,7 @@ import com.me.kjavaman.roadmap.service.PageViewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 // This controller handles requests for specific pages.
 @Controller
@@ -20,6 +17,7 @@ public class PageViewController {
     public PageViewController(PageViewService pageViewService) {
         this.pageViewService = pageViewService;
     }
+
 
     // This method returns a view based on a specified directory and page name.
     @GetMapping("/{subdir}/{page}")
