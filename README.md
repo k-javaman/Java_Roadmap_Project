@@ -12,7 +12,7 @@
 
 ## 배운점 및 느낀점
 
-- 부트스트랩과 Spring Boot 연동: 부트스트랩 모달 적용 방법과 Spring Boot와의 연동 방법을 학습했습니다. [링크]
+- 부트스트랩과 Spring Boot 연동: 부트스트랩 모달 적용 방법과 Spring Boot와의 연동 방법을 학습했습니다. [Link](https://medium.com/@kjavaman12/how-to-apply-bootstrap-modal-in-thymeleaf-439a37ac1b9d)
 - 레이아웃 구성: 부트스트랩을 활용한 레이아웃 구성에 대해 배웠습니다.
 - 예외 처리: templates/error 폴더를 이용한 간단한 예외 처리를 적용했습니다.
 - 국제화 (i18n): 국제화를 위해 thymeleaf와 messages.properties를 활용했습니다.
